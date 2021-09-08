@@ -1,0 +1,12 @@
+C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Release\net5.0\PubTmp\Out\CovidInfoAPI.exe
+C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Release\net5.0\PubTmp\Out\web.config
+C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
+C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Release\net5.0\PubTmp\Out\appsettings.json
+C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Release\net5.0\PubTmp\Out\CovidInfoAPI.dll
+C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Release\net5.0\PubTmp\Out\CovidInfoAPI.deps.json
+C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Release\net5.0\PubTmp\Out\CovidInfoAPI.runtimeconfig.json
+C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Release\net5.0\PubTmp\Out\CovidInfoAPI.pdb
+C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Release\net5.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
