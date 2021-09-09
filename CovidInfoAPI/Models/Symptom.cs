@@ -7,13 +7,13 @@ namespace CovidInfoAPI.Models
 {
     public class Symptom
     {
-        public string name;
-        public string description;
+        public string Name { get; set; }
+        public string Description { get; set; }
 
         public Symptom(string name, string description)
         {
-            this.name = name;
-            this.description = description;
+            Name = name;
+            Description = description;
         }
     }
 }

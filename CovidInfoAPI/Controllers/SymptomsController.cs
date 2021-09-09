@@ -1,4 +1,5 @@
-﻿using CovidInfoAPI.Services;
+﻿using CovidInfoAPI.Models;
+using CovidInfoAPI.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -15,7 +16,8 @@ namespace CovidInfoAPI.Controllers
         public ActionResult Get()
         {
             SymptomsRetrieveService symptomsService = new();
-            return Ok(symptomsService.GetSymptoms());
+            List<Symptom> symptoms = symptomsService.GetSymptoms();
+            return Ok(symptoms);
         }
     }
 }
