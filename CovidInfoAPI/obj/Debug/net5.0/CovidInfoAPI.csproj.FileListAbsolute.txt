@@ -28,3 +28,4 @@ C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Debug\net5.0\CovidI
 C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Debug\net5.0\CovidInfoAPI.genruntimeconfig.cache
 C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\bin\Debug\net5.0\web.config
 C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\bin\Debug\net5.0\RestSharp.dll
+C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Debug\net5.0\CovidInfoAPI.csprojAssemblyReference.cache

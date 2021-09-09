@@ -1,9 +1,30 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'symptom.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(MyApp());
+}
+//TODO: turn into stateful widgets so we can load data from api. Data gets from API, but the screen is painted before the data has loaded. Need a way to wait for the data and THEN paint the app.
+Future<List<Symptom>> fetchSymptoms() async {
+  final response = await http.get(
+      Uri.parse("https://covidhackatonapi.azurewebsites.net/api/Symptoms"));
+  List<dynamic> symptomListDyn = (json.decode(response.body))
+      .map((data) => Symptom.fromJson(data))
+      .toList();
+  List<Symptom> symptomList = symptomListDyn.cast<Symptom>();
+  return symptomList;
+}
+
+List<Symptom> symptomList() {
+  List<Symptom> returnList = [];
+  fetchSymptoms().then((value) => returnList = value);
+  print("list");
+  print(returnList);
+  return returnList;
 }
 
 class MyApp extends StatelessWidget {
@@ -16,7 +37,7 @@ class MyApp extends StatelessWidget {
       ),
       home: SymptomsListScreen(
         onTapped: handleSymptomTapped,
-        symptoms: [Symptom("Cough", "Painful dry cough")],
+        symptoms: symptomList(),
       ),
     );
   }

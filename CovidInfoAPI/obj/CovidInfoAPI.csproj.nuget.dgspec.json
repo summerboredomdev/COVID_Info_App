@@ -10,11 +10,11 @@
         "projectUniqueName": "C:\\Users\\Personal\\source\\repos\\CovidInfoAPI\\CovidInfoAPI\\CovidInfoAPI.csproj",
         "projectName": "CovidInfoAPI",
         "projectPath": "C:\\Users\\Personal\\source\\repos\\CovidInfoAPI\\CovidInfoAPI\\CovidInfoAPI.csproj",
-        "packagesPath": "C:\\Users\\Personal\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\mdefa\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Personal\\source\\repos\\CovidInfoAPI\\CovidInfoAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Personal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mdefa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

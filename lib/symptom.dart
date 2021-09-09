@@ -4,7 +4,11 @@ class Symptom {
   final String name;
   final String description;
 
-  Symptom(this.name, this.description);
+  Symptom({required this.name, required this.description});
+
+  factory Symptom.fromJson(Map<String, dynamic> json) {
+    return Symptom(name: json['name'], description: json['description']);
+  }
 }
 
 class SymptomsListScreen extends StatelessWidget {
