@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using CovidInfoAPI.Models;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,17 +9,22 @@ namespace CovidInfoAPI.Services
 {
     public class SymptomsRetrieveService
     {
-        public string GetSymptoms()
+        public List<Symptom> GetSymptoms()
         {
-            var pageURL = "https://api.nhs.uk/conditions/coronavirus-covid-19?url=covidhackatonapi.azurewebsites.net/api/Symptoms&modules=false";
+            Symptom cough = new("Dry cough", "Continuous dry cough for longer than 24 hours");
+            Symptom taste = new("Lost sense of smell/taste", "Cannot smell or taste properly");
+            Symptom fever = new("Fever", "Continuous body temperature over 37 degrees Celcius");
+            Symptom tired = new("Feeling tired", "Feeling very tired ");
+            Symptom soreThroat = new("Sore throat", "Sore throat for a continuous period of time");
 
-            var client = new RestClient(pageURL);
-            var request = new RestRequest();
-            request.Method = Method.GET;
-            request.AddHeader("Accept", "application/json");
-            IRestResponse response = client.Execute(request);
-            var content = response.Content;
-            return content;
+            List<Symptom> symptoms = new();
+            symptoms.Add(cough);
+            symptoms.Add(taste);
+            symptoms.Add(fever);
+            symptoms.Add(tired);
+            symptoms.Add(soreThroat);
+
+            return symptoms;
         }
     }
 }

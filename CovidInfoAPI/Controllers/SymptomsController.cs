@@ -12,9 +12,10 @@ namespace CovidInfoAPI.Controllers
     [ApiController]
     public class SymptomsController : ControllerBase
     {
-        public string Get()
+        public ActionResult Get()
         {
-            return "asenriudasnrg";
+            SymptomsRetrieveService symptomsService = new();
+            return Ok(symptomsService.GetSymptoms());
         }
     }
 }
