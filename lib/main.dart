@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'symptom.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,22 +14,24 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MapScreen(),
+      home: SymptomsListScreen(
+        onTapped: handleSymptomTapped,
+        symptoms: [Symptom("Cough", "Painful dry cough")],
+      ),
     );
   }
 }
 
 class MapScreen extends StatefulWidget {
-  const MapScreen({ Key? key }) : super(key: key);
+  const MapScreen({Key? key}) : super(key: key);
 
   @override
   _MapScreenState createState() => _MapScreenState();
 }
 
 class _MapScreenState extends State<MapScreen> {
-
   static const _initialCameraPosition = CameraPosition(
-    target: LatLng(55.93590298445013, -3.242209414912336), 
+    target: LatLng(55.93590298445013, -3.242209414912336),
     zoom: 15,
   );
 
@@ -37,21 +40,20 @@ class _MapScreenState extends State<MapScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Covid Test Center Map"),
-          backgroundColor: Colors.grey,
+        backgroundColor: Colors.grey,
       ),
       body: GoogleMap(
-        initialCameraPosition: _initialCameraPosition, 
-        myLocationEnabled: true, 
-        //myLocationButtonEnabled: true, 
-        compassEnabled: true, 
+        initialCameraPosition: _initialCameraPosition,
+        myLocationEnabled: true,
+        //myLocationButtonEnabled: true,
+        compassEnabled: true,
         markers: _createMarker(),
-        ),
+      ),
     );
   }
 
-  Set <Marker> _createMarker() {
+  Set<Marker> _createMarker() {
     return {
-
       /**
       Marker(
         markerId: MarkerId("My position"),
@@ -63,37 +65,30 @@ class _MapScreenState extends State<MapScreen> {
         markerId: MarkerId("Test Center 1"),
         position: LatLng(55.920230224640946, -3.234957402968305),
       ),
-
       Marker(
         markerId: MarkerId("Test Center 2"),
         position: LatLng(55.93320451435432, -3.1872647175562396),
       ),
-
       Marker(
         markerId: MarkerId("Test Center 3"),
         position: LatLng(55.9212733088685, -3.2840556527139495),
       ),
-
       Marker(
         markerId: MarkerId("Test Center 4"),
         position: LatLng(55.958084732616385, -3.3048607223109205),
       ),
-
       Marker(
         markerId: MarkerId("Test Center 5"),
         position: LatLng(55.97350586917549, -3.22980933856888),
       ),
-
       Marker(
         markerId: MarkerId("Test Center 6"),
         position: LatLng(55.977187619662764, -3.168123269739805),
       ),
-
       Marker(
         markerId: MarkerId("Test Center 7"),
         position: LatLng(55.96487539327647, -3.152084891844246),
       ),
-
       Marker(
         markerId: MarkerId("Test Center 8"),
         position: LatLng(55.9070591609747, -3.21274285952617),

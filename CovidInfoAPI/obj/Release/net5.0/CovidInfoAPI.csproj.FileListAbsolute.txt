@@ -28,3 +28,4 @@ C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Release\net5.0\Covi
 C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Release\net5.0\ref\CovidInfoAPI.dll
 C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Release\net5.0\CovidInfoAPI.pdb
 C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Release\net5.0\CovidInfoAPI.genruntimeconfig.cache
+C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\bin\Release\net5.0\RestSharp.dll

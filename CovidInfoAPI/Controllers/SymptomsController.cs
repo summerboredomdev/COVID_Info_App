@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CovidInfoAPI.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace CovidInfoAPI.Controllers
     {
         public string Get()
         {
-            return "Symptoms works!";
+            return "asenriudasnrg";
         }
     }
 }

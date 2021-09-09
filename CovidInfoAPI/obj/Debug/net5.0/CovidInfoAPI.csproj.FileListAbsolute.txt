@@ -1,4 +1,3 @@
-C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Debug\net5.0\CovidInfoAPI.csprojAssemblyReference.cache
 C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Debug\net5.0\CovidInfoAPI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Debug\net5.0\CovidInfoAPI.AssemblyInfoInputs.cache
 C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Debug\net5.0\CovidInfoAPI.AssemblyInfo.cs
@@ -27,3 +26,5 @@ C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Debug\net5.0\CovidI
 C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Debug\net5.0\ref\CovidInfoAPI.dll
 C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Debug\net5.0\CovidInfoAPI.pdb
 C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\obj\Debug\net5.0\CovidInfoAPI.genruntimeconfig.cache
+C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\bin\Debug\net5.0\web.config
+C:\Users\Personal\source\repos\CovidInfoAPI\CovidInfoAPI\bin\Debug\net5.0\RestSharp.dll
