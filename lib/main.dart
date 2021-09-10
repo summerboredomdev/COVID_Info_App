@@ -9,23 +9,6 @@ void main() {
   runApp(MyApp());
 }
 //TODO: turn into stateful widgets so we can load data from api. Data gets from API, but the screen is painted before the data has loaded. Need a way to wait for the data and THEN paint the app.
-Future<List<Symptom>> fetchSymptoms() async {
-  final response = await http.get(
-      Uri.parse("https://covidhackatonapi.azurewebsites.net/api/Symptoms"));
-  List<dynamic> symptomListDyn = (json.decode(response.body))
-      .map((data) => Symptom.fromJson(data))
-      .toList();
-  List<Symptom> symptomList = symptomListDyn.cast<Symptom>();
-  return symptomList;
-}
-
-List<Symptom> symptomList() {
-  List<Symptom> returnList = [];
-  fetchSymptoms().then((value) => returnList = value);
-  print("list");
-  print(returnList);
-  return returnList;
-}
 
 class MyApp extends StatelessWidget {
   @override
@@ -35,9 +18,42 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SymptomsListScreen(
-        onTapped: handleSymptomTapped,
-        symptoms: symptomList(),
+      home: MainScreen(),
+    );
+  }
+}
+
+class MainScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+            title: Text("Covid Information App"), backgroundColor: Colors.blue),
+        body: ListView(
+          children: [
+            ListTile(
+              title: Text("Vaccination Map"),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const MapScreen()));
+              },
+            ),
+            ListTile(
+              title: Text("Symptoms information"),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => SymptomsListScreen()));
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

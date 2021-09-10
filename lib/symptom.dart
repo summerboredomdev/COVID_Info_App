@@ -1,4 +1,8 @@
+import 'dart:convert';
+
+import 'package:covidapp/main.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class Symptom {
   final String name;
@@ -11,31 +15,61 @@ class Symptom {
   }
 }
 
-class SymptomsListScreen extends StatelessWidget {
-  final List<Symptom> symptoms;
-  final ValueChanged<Symptom> onTapped;
-  SymptomsListScreen({
-    required this.symptoms,
-    required this.onTapped,
-  });
+class SymptomsListScreen extends StatefulWidget {
+  SymptomsListScreen() : super();
+  @override
+  _SymptomsScreenState createState() => _SymptomsScreenState();
+}
+
+class _SymptomsScreenState extends State<SymptomsListScreen> {
+  List<Symptom> symptoms = [];
+
+  @override
+  void initState() {
+    super.initState();
+    fetchSymptoms();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: ListView(
-        children: [
-          for (var symptom in symptoms)
-            ListTile(
-              title: Text(symptom.name),
-              subtitle: Text(symptom.description),
-              onTap: () => onTapped(symptom),
-            )
-        ],
+        appBar: AppBar(),
+        body: ListView(
+          children: [
+            for (var symptom in symptoms)
+              ListTile(
+                title: Text(symptom.name),
+                subtitle: Text(symptom.description),
+                onTap: () => handleSymptomTapped(symptom),
+              )
+          ],
+        ));
+  }
+
+  void handleSymptomTapped(Symptom symptom) {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (BuildContext context) {
+          return Scaffold(
+              appBar: AppBar(
+                title: Text(symptom.name),
+                backgroundColor: Colors.grey,
+              ),
+              body: Center(
+                  child:
+                      Text(symptom.description, textAlign: TextAlign.center)));
+        },
       ),
     );
   }
-}
 
-void handleSymptomTapped(Symptom symptom) {
-  print(symptom.name);
+  void fetchSymptoms() async {
+    final response = await http.get(
+        Uri.parse("https://covidhackatonapi.azurewebsites.net/api/Symptoms"));
+    List<dynamic> symptomListDyn = (json.decode(response.body))
+        .map((data) => Symptom.fromJson(data))
+        .toList();
+    List<Symptom> symptomList = symptomListDyn.cast<Symptom>();
+    symptoms = symptomList;
+  }
 }
